@@ -9,9 +9,10 @@ function FilterByName(props) {
   };
 
   return (
-    <label>
+    <label className='main__form-label' htmlFor='userSearch'>
+      Introduce el nombre del personaje que quieras encontrar:
       <input
-        // className='add class'
+        className='main__form-input'
         placeholder='Ej. Rick Sanchez'
         onChange={handleFilter}
         type='text'

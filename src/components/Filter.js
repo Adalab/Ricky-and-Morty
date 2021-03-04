@@ -3,7 +3,7 @@ import FilterByStatus from './FilterByStatus';
 
 const Filter = (props) => {
   return (
-    <form>
+    <form className='main__form'>
       <FilterByName handleFilter={props.handleFilter} />
       <FilterByStatus handleFilter={props.handleFilter} />
     </form>

@@ -1,6 +1,7 @@
 import logo from '../images/logo.png';
+import '../stylesheets/components/Header.scss';
 
-const Header = () => {
+function Header() {
   return (
     <header id='header' className='header'>
       <img
@@ -11,6 +12,6 @@ const Header = () => {
       />
     </header>
   );
-};
+}
 
 export default Header;

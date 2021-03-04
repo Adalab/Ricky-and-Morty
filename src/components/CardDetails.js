@@ -1,8 +1,7 @@
-import '../stylesheets/components/CardDetail.scss';
+import '../stylesheets/components/CardDetails.scss';
 import { Link } from 'react-router-dom';
 
 const CardDetails = (props) => {
-  console.log(props.character);
   if (props.character === undefined) {
     return (
       <section>
@@ -11,20 +10,25 @@ const CardDetails = (props) => {
     );
   } else {
     return (
-      <section>
+      <article className='main__detail'>
+        <Link className='main__detail-link' title='Volver a resultados' to='/'>
+          Volver
+        </Link>
         <img
-          className='card__img'
+          className='main__detail-img'
           src={props.character.image}
           alt={`Foto de ${props.character.name}`}
         />
-        <ul>
-          <li>Nombre:{props.character.name} </li>
-          <li>Especie: {props.character.species}</li>
-          <li>Planeta de origen: {props.character.origin.name}</li>
-          <li>Episodios: {props.character.episodes}</li>
-          <li>Estado:{props.character.status}</li>
+        <h2 className='main__detail-name'>{props.character.name}</h2>
+        <ul className='main__detail-list'>
+          <li className='main__detail-listItem'>
+            <h2>Especie: {props.character.species}</h2>{' '}
+            <h2>Planeta de origen: {props.character.origin.name}</h2>{' '}
+            <h2>Episodios: {props.character.episodes}</h2>{' '}
+            <h2>Estado:{props.character.status}</h2>
+          </li>
         </ul>
-      </section>
+      </article>
     );
   }
 };

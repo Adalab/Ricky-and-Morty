@@ -43,11 +43,13 @@ const App = () => {
     });
     return <CardDetails character={selectcharacter} />;
   };
+  const handleBackClick = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <Header />
-      <main>
-        <Button />
+      <main className='main'>
         <Switch>
           <Route path='/character/:id' render={renderDatail} />
           <Route exact path='/'>
@@ -55,6 +57,7 @@ const App = () => {
             <CharacterList characters={filterCharacters} name={name} />
           </Route>
         </Switch>
+        <Button handleBackClick={handleBackClick} />
       </main>
       <Footer />
     </>

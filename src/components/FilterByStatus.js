@@ -9,7 +9,7 @@ const FilterByStatus = (props) => {
     <label htmlFor='status'>
       Estado:
       <select
-        className='form__input-text'
+        className='main__form-clean'
         name='status'
         id='status'
         onChange={handleFilter}
