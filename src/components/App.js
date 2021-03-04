@@ -6,6 +6,7 @@ import CharacterList from './CharacterList';
 import Footer from './Footer';
 import getInfoFromApi from '../services/getDataFromApi';
 import React, { useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -15,7 +16,6 @@ const App = () => {
     getInfoFromApi().then((data) => setCharacters(data));
   }, []);
 
-  //Escuchar eventos del input (Componente Filter)
   const handleFilter = (inputChange) => {
     if (inputChange.key === 'name') {
       setName(inputChange.value);
@@ -34,19 +34,27 @@ const App = () => {
         return character.status === status;
       }
     });
-  console.log(filterCharacters);
+
+  const renderDatail = (props) => {
+    console.log(props);
+    const id = parseInt(props.match.params.id);
+    const selectcharacter = characters.find((character) => {
+      return character.id === id;
+    });
+    return <CardDetails character={selectcharacter} />;
+  };
   return (
     <>
       <Header />
       <main>
-        <Filter name={name} handleFilter={handleFilter} />
-        <CharacterList
-          characters={filterCharacters}
-          // characters={characters}
-          name={name}
-        />
         <Button />
-        <CardDetails />
+        <Switch>
+          <Route path='/character/:id' render={renderDatail} />
+          <Route exact path='/'>
+            <Filter name={name} handleFilter={handleFilter} />
+            <CharacterList characters={filterCharacters} name={name} />
+          </Route>
+        </Switch>
       </main>
       <Footer />
     </>

@@ -1,6 +1,8 @@
 import '../stylesheets/components/CardDetail.scss';
+import { Link } from 'react-router-dom';
 
 const CardDetails = (props) => {
+  console.log(props.character);
   if (props.character === undefined) {
     return (
       <section>
@@ -10,13 +12,17 @@ const CardDetails = (props) => {
   } else {
     return (
       <section>
-        <img className='card__img' src='' alt='' />
+        <img
+          className='card__img'
+          src={props.character.image}
+          alt={`Foto de ${props.character.name}`}
+        />
         <ul>
-          <li>Nombre:{props.user.name} </li>
-          <li>Especie: {props.user.species}</li>
-          <li>Planeta de origen: {props.user.origin.name}</li>
-          <li>Episodios: {props.user.episode.length}</li>
-          <li>Estado:{props.user.status}</li>
+          <li>Nombre:{props.character.name} </li>
+          <li>Especie: {props.character.species}</li>
+          <li>Planeta de origen: {props.character.origin.name}</li>
+          <li>Episodios: {props.character.episodes}</li>
+          <li>Estado:{props.character.status}</li>
         </ul>
       </section>
     );
