@@ -6,7 +6,7 @@ const FilterByStatus = (props) => {
     });
   };
   return (
-    <label htmlFor='status'>
+    <label className='main__form-label' htmlFor='status'>
       Estado:
       <select
         className='main__form-clean'

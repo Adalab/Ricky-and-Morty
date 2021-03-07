@@ -14,7 +14,7 @@
     border: 7px solid #8df12f;
     width: 90%;
     position: relative;
-    color: #f1ecee;
+    color: black;
     @media all and (min-width: 768px) {
       width: 50%;
       margin: 0px 0px 50px 0px;
@@ -23,9 +23,6 @@
     &-label {
       font-size: 20px;
       text-align: center;
-      @media all and (min-width: 768px) {
-        font-size: 30px;
-      }
     }
     &-input {
       width: 90%;
@@ -40,11 +37,13 @@
     &-clean {
       background-color: transparent;
       border: none;
-      font-size: 25px;
-      color: #f1ecee;
+      font-size: 20px;
+      text-align: center;
+      color: black;
       outline: none;
       transition: ease all 1s;
       font-weight: bold;
+      margin-left: 20px;
     }
   }
 }

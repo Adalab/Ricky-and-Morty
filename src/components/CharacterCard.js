@@ -1,6 +1,7 @@
 import '../stylesheets/components/CharacterCard.scss';
 import { Link } from 'react-router-dom';
-function CharacterCard(props) {
+
+const CharacterCard = (props) => {
   return (
     <li>
       <Link
@@ -26,6 +27,6 @@ function CharacterCard(props) {
       </Link>
     </li>
   );
-}
+};
 
 export default CharacterCard;

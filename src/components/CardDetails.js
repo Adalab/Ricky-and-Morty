@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CardDetails = (props) => {
   if (props.character === undefined) {
+    console.log(props);
     return (
       <section>
         <h2>Usuario no encontrado</h2>
@@ -22,8 +23,8 @@ const CardDetails = (props) => {
         <h2 className='main__detail-name'>{props.character.name}</h2>
         <ul className='main__detail-list'>
           <li className='main__detail-listItem'>
-            <h2>Especie: {props.character.species}</h2>{' '}
-            <h2>Planeta de origen: {props.character.origin.name}</h2>{' '}
+            <h2>Especie: {props.character.specie}</h2>{' '}
+            <h2>Planeta de origen: {props.character.origin}</h2>{' '}
             <h2>Episodios: {props.character.episodes}</h2>{' '}
             <h2>Estado:{props.character.status}</h2>
           </li>
