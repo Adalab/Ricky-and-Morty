@@ -12,6 +12,7 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
   const [status, setStatus] = useState('all');
+  const [sorting, setSorting] = useState(false);
   useEffect(() => {
     getInfoFromApi().then((data) => setCharacters(data));
   }, []);
@@ -21,6 +22,8 @@ const App = () => {
       setName(inputChange.value);
     } else if (inputChange.key === 'status') {
       setStatus(inputChange.value);
+    } else if (inputChange.key === 'sorting') {
+      setSorting(true);
     }
   };
   const filterCharacters = characters
@@ -34,9 +37,18 @@ const App = () => {
         return character.status === status;
       }
     });
+  if (sorting) {
+    filterCharacters.sort(function (a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+    });
+  }
 
   const renderDatail = (props) => {
-    console.log(props);
     const id = parseInt(props.match.params.id);
     const selectcharacter = characters.find((character) => {
       return character.id === id;
@@ -57,7 +69,7 @@ const App = () => {
             <CharacterList characters={filterCharacters} name={name} />
           </Route>
         </Switch>
-        <Button handleBackClick={handleBackClick} />
+        <Button handleBackClick={handleBackClick} name={name} />
       </main>
       <Footer />
     </>

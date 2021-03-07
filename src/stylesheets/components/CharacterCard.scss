@@ -22,3 +22,23 @@
     }
   }
 }
+.icons__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icons__box {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+
+  &--text {
+    margin: 0;
+    color: black;
+  }
+
+  &--icon {
+    width: 35px;
+    margin: 0 5px -5px;
+  }
+}

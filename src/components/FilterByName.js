@@ -28,14 +28,6 @@ function FilterByName(props) {
         type='text'
         value={props.name}
       />
-      <input
-        className='main__form-clean'
-        type='button'
-        name='cleanSearch'
-        value='Reset'
-        title='Borrar búsqueda'
-        onClick={handleCleanClick}
-      />
     </label>
   );
 }

@@ -24,6 +24,5 @@ const CardDetails = (props) => {
     </article>
   );
 };
-// };
 
 export default CardDetails;
