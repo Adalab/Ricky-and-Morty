@@ -9,7 +9,6 @@ const Footer = () => {
           className='footer__github'
           title='GitHub'
           target='_blank'
-          rel='noreferrer'
         >
           <i className='fab fa-github footer__github--icon'></i>
         </a>
@@ -18,7 +17,6 @@ const Footer = () => {
           className='footer__twitter'
           title='Twitter'
           target='_blank'
-          rel='noreferrer'
         >
           <i className='fab fa-twitter footer__twitter--icon'></i>
         </a>
@@ -27,7 +25,6 @@ const Footer = () => {
           className='footer__linkedin'
           title='Linkedin'
           target='_blank'
-          rel='noreferrer'
         >
           <i className='fab fa-linkedin footer__linkedin--icon'></i>
         </a>
