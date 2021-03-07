@@ -14,7 +14,10 @@ const CharacterList = (props) => {
   } else if (props.character === undefined) {
     return (
       <section>
-        <h2 className='main__errorMessage'>Usuario no encontrado</h2>
+        <h2 className='main__errorMessage'>
+          {' '}
+          No hay ningún personaje que coincida con la palabra "{props.name}"
+        </h2>
       </section>
     );
   }
