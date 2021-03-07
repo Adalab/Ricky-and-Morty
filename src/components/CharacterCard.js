@@ -9,9 +9,9 @@ import PropTypes from 'prop-types';
 
 const CharacterCard = (props) => {
   const species = () => {
-    if (props.character.species === 'Alien') {
+    if (props.character.specie === 'Alien') {
       return alien;
-    } else if (props.character.species === 'Human') {
+    } else if (props.character.specie === 'Human') {
       return human;
     }
   };
