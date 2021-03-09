@@ -7,12 +7,14 @@ import Footer from './Footer';
 import getInfoFromApi from '../services/getDataFromApi';
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { number } from 'prop-types';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
   const [status, setStatus] = useState('all');
   const [sorting, setSorting] = useState(false);
+  const [number, setNumber] = useState('');
   useEffect(() => {
     getInfoFromApi().then((data) => setCharacters(data));
   }, []);
@@ -22,8 +24,15 @@ const App = () => {
       setName(inputChange.value);
     } else if (inputChange.key === 'status') {
       setStatus(inputChange.value);
-    } else if (inputChange.key === 'sorting') {
-      setSorting(true);
+    } else if (inputChange.key === 'checked') {
+      console.log(inputChange);
+      if (inputChange.value === true) {
+        setSorting(false);
+      } else {
+        setSorting(true);
+      }
+    } else if (inputChange.key === 'number') {
+      setNumber(inputChange.value);
     }
   };
   const filterCharacters = characters
@@ -36,8 +45,17 @@ const App = () => {
       } else {
         return character.status === status;
       }
+    })
+    .filter((character) => {
+      if (number === '') {
+        return true;
+      } else {
+        return character.episodes === parseInt(number);
+      }
     });
+
   if (sorting) {
+    console.log(sorting);
     filterCharacters.sort(function (a, b) {
       if (a.name < b.name) {
         return -1;
@@ -58,6 +76,11 @@ const App = () => {
   const handleBackClick = () => {
     window.scrollTo(0, 0);
   };
+  const resetHandler = () => {
+    setName('');
+    setStatus('all');
+    setNumber('');
+  };
   return (
     <>
       <Header />
@@ -65,7 +88,7 @@ const App = () => {
         <Switch>
           <Route path='/character/:id' render={renderDatail} />
           <Route exact path='/'>
-            <Filter name={name} handleFilter={handleFilter} />
+            <Filter name={name} handleFilter={handleFilter} number={number} />
             <CharacterList characters={filterCharacters} name={name} />
           </Route>
         </Switch>
