@@ -55,7 +55,6 @@ const App = () => {
     });
 
   if (sorting) {
-    console.log(sorting);
     filterCharacters.sort(function (a, b) {
       if (a.name < b.name) {
         return -1;
