@@ -41,9 +41,7 @@ const CharacterCard = (props) => {
           />
           <h2 className='main__list-articleName'>{props.character.name}</h2>
           <div className='icons__box'>
-            <h3 className='main__list-articleSpecie'>
-              Especie:{props.character.specie}
-            </h3>
+            <h3 className='main__list-articleSpecie'>Especie:</h3>
             <img
               className='icons__box--icon'
               src={species()}
@@ -59,7 +57,7 @@ const CharacterCard = (props) => {
                 alt={`${props.character.status} icon`}
                 title={`${props.character.status} icon`}
               />
-              Estado: {props.character.status}
+              Estado:
             </h3>
           </div>
         </article>
