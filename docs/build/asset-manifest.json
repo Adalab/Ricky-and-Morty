@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.731ede83.chunk.css",
-    "main.js": "./static/js/main.917f5e83.chunk.js",
-    "main.js.map": "./static/js/main.917f5e83.chunk.js.map",
+    "main.css": "./static/css/main.2655c872.chunk.css",
+    "main.js": "./static/js/main.188de199.chunk.js",
+    "main.js.map": "./static/js/main.188de199.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.1f8e7b70.js",
     "runtime-main.js.map": "./static/js/runtime-main.1f8e7b70.js.map",
     "static/js/2.bb7789f4.chunk.js": "./static/js/2.bb7789f4.chunk.js",
     "static/js/2.bb7789f4.chunk.js.map": "./static/js/2.bb7789f4.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.731ede83.chunk.css.map": "./static/css/main.731ede83.chunk.css.map",
+    "static/css/main.2655c872.chunk.css.map": "./static/css/main.2655c872.chunk.css.map",
     "static/js/2.bb7789f4.chunk.js.LICENSE.txt": "./static/js/2.bb7789f4.chunk.js.LICENSE.txt",
     "static/media/alien.447e02bf.png": "./static/media/alien.447e02bf.png",
     "static/media/alive.49cb2bb4.png": "./static/media/alive.49cb2bb4.png",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.1f8e7b70.js",
     "static/js/2.bb7789f4.chunk.js",
-    "static/css/main.731ede83.chunk.css",
-    "static/js/main.917f5e83.chunk.js"
+    "static/css/main.2655c872.chunk.css",
+    "static/js/main.188de199.chunk.js"
   ]
 }
